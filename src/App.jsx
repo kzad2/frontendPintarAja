@@ -48,8 +48,8 @@ function App() {
         />
       </div>
       {/* text Kanan */}
-      <div className="md:w-1/4 pl-8">
-        <p className="text-lg leading-relaxed">
+      <div className="md:w-1/4 pl-8 pt-52">
+        <p className="text-lg leading-relaxed text-justify">
           PintarAja adalah platform pembelajaran online yang memungkinkan siapa pun untuk belajar skill baru, 
           mengakses materi berkualitas, dan mendapatkan sertifikat setelah menyelesaikan kursus.
           Selain itu, anda juga dapat menjadi mentor yang memungkinkan siapa pun untuk mengajar dan membuat sebuah kursus
@@ -61,7 +61,7 @@ function App() {
       {/* 3 */}
       <div className="bg-white py-12 px-6 text-center">
         <div className="bg-white py-12 px-6">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-36 gap-y-8">
           {/* Kiri */}
                <div className="bg-white shadow-lg rounded-lg p-6 w-[650px] h-[750px] flex flex-col justify-between items-center">
               {/* Bagian Atas */}
@@ -97,7 +97,7 @@ function App() {
               className="w-80 h-auto rounded"
             />
             </div>
-            <div className="bg-white rounded shadow-lg p-8 flex flex-col items-center justify-center w-[650px] h-[283px]">
+            <div className="bg-white border rounded shadow-lg p-8 flex flex-col items-center justify-center w-[650px] h-[283px]">
               <h3 className="text-xl font-bold mb-4">Selengkapnya...</h3>
               <button className="bg-yellow-400 text-white font-semibold px-6 py-2 rounded hover:bg-yellow-500 transition">
                 Klik Di Sini
@@ -106,6 +106,7 @@ function App() {
             </div>
             </div>
           </div>
+
           <div className="bg-white min-h-screen flex flex-col items-center  py-12 px-6 text-center">
               <h2 className="text-3xl  text-black font-bold mb-4 max-w-3xl">
                 Semua yang Anda butuhkan untuk memulai 
@@ -129,64 +130,30 @@ function App() {
               </p>
             </div>
              <div className="bg-[#3F51B5] py-12 px-6">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
-    {/* Kiri */}
-    <div className="bg-[#344495] shadow-lg rounded-lg p-8 w-full max-w-[700px] h-[750px] flex flex-col text-white">
-      <h2 className="text-2xl font-bold mb-6">Pelajar Manfaat</h2>
-      <ul className="list-disc list-inside space-y-2 text-sm">
-        <li>Akses Konten Gratis</li>
-        <li>Pelajar bisa mencoba artikel, video, dan modul gratis sebelum membeli kelas.</li>
-        <li>Materi Lengkap & Terstruktur</li>
-        <li>Kursus berisi video, e-book, modul, dan kuis yang disusun sistematis.</li>
-        <li>Belajar dari Mentor Berpengalaman</li>
-        <li>Materi diajarkan oleh praktisi dan pengajar profesional.</li>
-        <li>Fleksibel – Belajar Kapan Saja, Di Mana Saja</li>
-        <li>Bisa diakses lewat laptop maupun ponsel, kapan pun kamu punya waktu.</li>
-        <li>Progress Tracker Otomatis</li>
-        <li>Sistem mencatat progres belajar secara otomatis agar pelajar tidak bingung.</li>
-        <li>Sertifikat Resmi Setelah Menyelesaikan Kursus</li>
-        <li>Bisa digunakan untuk melamar kerja, portofolio, atau kenaikan jabatan.</li>
-        <li>Proses Pembayaran Mudah & Aman (Midtrans)</li>
-        <li>Bisa bayar via QRIS, e-wallet, transfer bank, dll.</li>
-        <li>Review & Komentar</li>
-        <li>Bisa melihat ulasan dari pelajar lain sebelum membeli kursus.</li>
-        <li>Notifikasi Update</li>
-        <li>Dapat info otomatis saat ada materi baru, promo, atau pengumuman.</li>
-        <li>Harga Terjangkau & Banyak Diskon</li>
-        <li>Banyak kelas tersedia dengan harga bersahabat dan diskon berkala.</li>
-      </ul>
-    </div>
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+          {/* Kiri */}
+          <div className="bg-[#344495] shadow-lg rounded-lg p-8 w-full max-w-[700px] h-[750px] flex flex-col text-white">
+            <h2 className="text-2xl font-bold mb-6">Pelajar Manfaat</h2>
+             <p className="text-black  text-left max-w-2xl">
+                 Akses Konten Gratis
+              </p>
+             <p className="text-black  text-left max-w-2xl">
+                Pelajar bisa mencoba artikel, video, dan modul gratis sebelum membeli kelas.
+              </p>
+              
+          </div>
 
-    {/* Kanan */}
-    <div className="bg-[#344495] shadow-lg rounded-lg p-8 w-full max-w-[700px] h-[750px] flex flex-col text-white">
-      <h2 className="text-2xl font-bold mb-6">Mentor Manfaat</h2>
-      <ul className="list-disc list-inside space-y-2 text-sm">
-        <li>Bisa Membuat Kursus Sendiri Secara Gratis</li>
-        <li>Tidak perlu biaya awal untuk jadi mentor.</li>
-        <li>Upload Materi Multi-Format</li>
-        <li>Bisa mengunggah video, PDF, kuis, tugas, audio, dan lainnya.</li>
-        <li>Atur Harga Kursus Sendiri</li>
-        <li>Bebas menentukan nilai jual sesuai materi dan target market.</li>
-        <li>Lihat Statistik & Penghasilan Real-time</li>
-        <li>Bisa memantau penjualan kursus dan penghasilan dengan dashboard pribadi.</li>
-        <li>Mentor Penghasilan dari Setiap Pembelian Kursus</li>
-        <li>Sistem bagi hasil otomatis, mentor langsung dapat komisi.</li>
-        <li>Ajukan Payout Kapan Saja</li>
-        <li>Payout bisa dilakukan manual maupun otomatis via Midtrans.</li>
-        <li>Pantau Perkembangan Pelajar</li>
-        <li>Lihat statistik progres siswa, interaksi, dan feedback.</li>
-        <li>Tinggalkan Pengumuman untuk Siswa</li>
-        <li>Fitur broadcast ke semua siswa di kelas yang dibuka.</li>
-        <li>Bangun Reputasi & Portofolio Digital</li>
-        <li>Semakin banyak review positif, semakin dikenal di platform.</li>
-        <li>Ikut Program Loyalitas Mentor</li>
-        <li>Potongan platform makin kecil kalau penjualan tinggi (opsional).</li>
-      </ul>
-    </div>
-  </div>
+
+          {/*kanan*/}
+
+          <div className="bg-[#344495] shadow-lg rounded-lg p-8 w-full max-w-[700px] h-[750px] flex flex-col text-white">
+            <h2 className="text-2xl font-bold mb-6">Mentor Manfaat</h2>
+            
+          </div>
+        </div>
 
           </div>
-            </div>
+          </div>
     </>
   );
 }
