@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-
-
+import educator from "../../assets/educator_6dgp.svg";
 
 export default function Login() {
   return (
@@ -8,7 +7,7 @@ export default function Login() {
   <div className="bg-white shadow-lg rounded-lg flex overflow-hidden w-[1197px] h-[654px]">
     <div className="w-1/2 bg-[#3F51B5] flex items-center justify-center p-8">
       <img
-        src=""
+        src={educator}
         alt="Gambar Tengah"
         className="w-80 h-auto rounded"
          />
