@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function App() {
   return (
     <>
@@ -11,9 +13,12 @@ function App() {
           <p className="text-gray-700 max-w-md">
             Nikmati akses ke kursus video, e-book, artikel, dan modul pembelajaran
             dari mentor terbaik.</p>
-         <a href="#"
-            className="bg-yellow-400 text-white font-semibold rounded hover:bg-yellow-500 transition
-             w-45 h-10 flex items-center justify-center">Daftar</a>
+        <Link 
+          to="/register" 
+          className="bg-yellow-400 text-white font-semibold rounded hover:bg-yellow-500 transition
+           w-45 h-10 flex items-center justify-center">
+          Daftar
+        </Link>        
         </div>
         <div className="flex justify-center">
            <img
@@ -53,7 +58,6 @@ function App() {
           <div className="md:w-1/2 md"></div>
         </div>
       </div>
-
       {/* 3 */}
       <div className="bg-white py-12 px-6 text-center">
         <div className="bg-white py-12 px-6">
@@ -124,63 +128,63 @@ function App() {
                 yang bermanfaat dan menjadi lebih pintar di PintarAja~
               </p>
             </div>
-              <div className="bg-[#4682B4] py-12 px-6 text-center">
-                <div className="bg-white py-12 px-6">
-                  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
-          {/* Kiri */}
-               <div className="bg-white shadow-lg rounded-lg p-6 w-[650px] h-[750px] flex flex-col justify-between items-center">
-              {/* Bagian Atas */}
-              <div className="text-center">
-                <h2 className="text-2xl  text-black font-bold mb-4">Kontak Kami</h2>
-                <p className="text-gray-700 mb-6 max-w-md">
-                  Apakah Anda memiliki pertanyaan, saran, atau hanya ingin menyapa?
-                  Jangan ragu untuk menghubungi kami melalui berbagai saluran di bawah ini.
-                </p>
-              </div>
-              {/* Gambar */}
-              <div className="flex justify-center">
-                <img
-                src="/src/assets/notebook.png"
-                alt="Gambar Tengah"
-                className="w-80 h-auto rounded"
-                 />
-              </div>
-              {/* kontak */}
-              <div className="grid grid-cols-2 gap-y-4 text-gray-700 text-sm w-full max-w-md">
-                <div className="flex items-center gap-2">📞 08XX XXXX XXXX</div>
-                <div className="flex items-center gap-2">📍 Jl. Bhayangkara</div>
-                <div className="flex items-center gap-2">📧 pintaraja@gmail.com</div>
-                <div className="flex items-center gap-2">⏰ Buka 09:00 - 14:00</div>
-              </div>
-            </div>
-               {/* Kiri */}
-               <div className="bg-white shadow-lg rounded-lg p-6 w-[650px] h-[750px] flex flex-col justify-between items-center">
-              {/* Bagian Atas */}
-              <div className="text-center">
-                <h2 className="text-2xl  text-black font-bold mb-4">Kontak Kami</h2>
-                <p className="text-gray-700 mb-6 max-w-md">
-                  Apakah Anda memiliki pertanyaan, saran, atau hanya ingin menyapa?
-                  Jangan ragu untuk menghubungi kami melalui berbagai saluran di bawah ini.
-                </p>
-              </div>
-              {/* Gambar */}
-              <div className="flex justify-center">
-                <img
-                src="/src/assets/notebook.png"
-                alt="Gambar Tengah"
-                className="w-80 h-auto rounded"
-                 />
-              </div>
-              {/* kontak */}
-              <div className="grid grid-cols-2 gap-y-4 text-gray-700 text-sm w-full max-w-md">
-                <div className="flex items-center gap-2">📞 08XX XXXX XXXX</div>
-                <div className="flex items-center gap-2">📍 Jl. Bhayangkara</div>
-                <div className="flex items-center gap-2">📧 pintaraja@gmail.com</div>
-                <div className="flex items-center gap-2">⏰ Buka 09:00 - 14:00</div>
-              </div>
-            </div>
-            </div>
-          </div>
+             <div className="bg-[#3F51B5] py-12 px-6">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+    {/* Kiri */}
+    <div className="bg-[#344495] shadow-lg rounded-lg p-8 w-full max-w-[700px] h-[750px] flex flex-col text-white">
+      <h2 className="text-2xl font-bold mb-6">Pelajar Manfaat</h2>
+      <ul className="list-disc list-inside space-y-2 text-sm">
+        <li>Akses Konten Gratis</li>
+        <li>Pelajar bisa mencoba artikel, video, dan modul gratis sebelum membeli kelas.</li>
+        <li>Materi Lengkap & Terstruktur</li>
+        <li>Kursus berisi video, e-book, modul, dan kuis yang disusun sistematis.</li>
+        <li>Belajar dari Mentor Berpengalaman</li>
+        <li>Materi diajarkan oleh praktisi dan pengajar profesional.</li>
+        <li>Fleksibel – Belajar Kapan Saja, Di Mana Saja</li>
+        <li>Bisa diakses lewat laptop maupun ponsel, kapan pun kamu punya waktu.</li>
+        <li>Progress Tracker Otomatis</li>
+        <li>Sistem mencatat progres belajar secara otomatis agar pelajar tidak bingung.</li>
+        <li>Sertifikat Resmi Setelah Menyelesaikan Kursus</li>
+        <li>Bisa digunakan untuk melamar kerja, portofolio, atau kenaikan jabatan.</li>
+        <li>Proses Pembayaran Mudah & Aman (Midtrans)</li>
+        <li>Bisa bayar via QRIS, e-wallet, transfer bank, dll.</li>
+        <li>Review & Komentar</li>
+        <li>Bisa melihat ulasan dari pelajar lain sebelum membeli kursus.</li>
+        <li>Notifikasi Update</li>
+        <li>Dapat info otomatis saat ada materi baru, promo, atau pengumuman.</li>
+        <li>Harga Terjangkau & Banyak Diskon</li>
+        <li>Banyak kelas tersedia dengan harga bersahabat dan diskon berkala.</li>
+      </ul>
+    </div>
+
+    {/* Kanan */}
+    <div className="bg-[#344495] shadow-lg rounded-lg p-8 w-full max-w-[700px] h-[750px] flex flex-col text-white">
+      <h2 className="text-2xl font-bold mb-6">Mentor Manfaat</h2>
+      <ul className="list-disc list-inside space-y-2 text-sm">
+        <li>Bisa Membuat Kursus Sendiri Secara Gratis</li>
+        <li>Tidak perlu biaya awal untuk jadi mentor.</li>
+        <li>Upload Materi Multi-Format</li>
+        <li>Bisa mengunggah video, PDF, kuis, tugas, audio, dan lainnya.</li>
+        <li>Atur Harga Kursus Sendiri</li>
+        <li>Bebas menentukan nilai jual sesuai materi dan target market.</li>
+        <li>Lihat Statistik & Penghasilan Real-time</li>
+        <li>Bisa memantau penjualan kursus dan penghasilan dengan dashboard pribadi.</li>
+        <li>Mentor Penghasilan dari Setiap Pembelian Kursus</li>
+        <li>Sistem bagi hasil otomatis, mentor langsung dapat komisi.</li>
+        <li>Ajukan Payout Kapan Saja</li>
+        <li>Payout bisa dilakukan manual maupun otomatis via Midtrans.</li>
+        <li>Pantau Perkembangan Pelajar</li>
+        <li>Lihat statistik progres siswa, interaksi, dan feedback.</li>
+        <li>Tinggalkan Pengumuman untuk Siswa</li>
+        <li>Fitur broadcast ke semua siswa di kelas yang dibuka.</li>
+        <li>Bangun Reputasi & Portofolio Digital</li>
+        <li>Semakin banyak review positif, semakin dikenal di platform.</li>
+        <li>Ikut Program Loyalitas Mentor</li>
+        <li>Potongan platform makin kecil kalau penjualan tinggi (opsional).</li>
+      </ul>
+    </div>
+  </div>
+
           </div>
             </div>
     </>
