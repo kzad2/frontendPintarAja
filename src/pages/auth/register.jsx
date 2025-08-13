@@ -22,11 +22,11 @@ function Register() {
           <input
             type="text"
             placeholder="Nama"
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+            className="w-full px-4 py-2 border-2 text-black border-black rounded-lg focus:outline-none focus:border-black"
           />
         </div>
         <div>
-          <label className="block text-blac">Email</label>
+          <label className="block text-gray-700">Email</label>
           <input
             type="email"
             placeholder="Email"
