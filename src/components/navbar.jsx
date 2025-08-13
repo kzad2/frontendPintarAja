@@ -1,3 +1,7 @@
+
+import { Link } from "react-router-dom";
+
+
 function Navbar() {
   return (
     <nav className="bg-[#3F51B5] px-6 py-7 shadow-lg">
@@ -15,10 +19,14 @@ function Navbar() {
           <a href="#">Kontak Kami</a>
           <a href="#">Konten Gratis</a>
           <a href="#">Masuk</a>
-
           {/* Tombol Daftar */}
-          <a href="#" className="bg-yellow-400 text-white px-4 py-1 rounded hover:bg-yellow-500 transition"
-          >Daftar</a>
+          
+          <Link 
+          to="/register" 
+          className="bg-yellow-400 text-white font-semibold rounded hover:bg-yellow-500 transition
+           w-45 h-10 flex items-center justify-center">
+          Daftar
+        </Link>  
         </div>
       </div>
     </nav>
