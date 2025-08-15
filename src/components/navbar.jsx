@@ -2,9 +2,11 @@
 import { Link } from "react-router-dom";
 
 
-function Navbar() {
+function Navbar() { 
   return (
-    <nav className="bg-[#3F51B5] px-6 py-7 shadow-lg">
+    <nav className="fixed w-full top-0 left-0
+      z-50 bg-[#3F51B5] px-13 py-4 shadow-lg
+      transition-all duration-300 ease-in-out">
       <div className="flex justify-between items-center">
         
         {/* Logo */}
