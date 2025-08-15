@@ -1,67 +1,65 @@
 import React, { useEffect, useState } from 'react';
 import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
-import educator from '../../assets/educator_6dgp.svg'; 
 import { LucideChrome } from 'lucide-react';
 
-
-
-export default function Login() {
+const Register = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
-
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setError('');
-
-    const backendUrl = "http://localhost:8000/api/login";
-
-    try {
-        const res = await fetch(backendUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-        });
-
-        const data = await res.json();
-
-        if (!res.ok) {
-            throw new Error(data.message || 'Login gagal. Periksa kembali email dan password Anda.');
-        }
-
-        console.log('Login berhasil:', data);
-        if (data.token) {
-            localStorage.setItem('authToken', data.token);
-            alert('Login berhasil!');
-            // window.location.href = '/dashboard';
-        }
-
-    } catch (error) {
-        console.error('Error saat login:', error);
-        setError('Login gagal: ' + error.message);
-    } finally {
-        setIsLoading(false);
-    }
-  };
 
   const handleCredentialResponse = async (response) => {
     setIsLoading(true);
-    setError('');
     const idToken = response.credential;
     console.log("ID Token dari Google:", idToken);
-    
-    // const backendUrl = "http://localhost:8000/api/auth/google";
-    
-    setTimeout(() => { 
+
+    const backendUrl = "http://localhost:8000/api/auth/google";
+
+    try {
+      const res = await fetch(backendUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token: idToken }),
+      });
+
+      const data = await res.json();
+      
+      if (!res.ok) {
+        throw new Error(data.error || 'Autentikasi Google gagal.');
+      }
+
+      console.log('Respons dari Laravel:', data);
+      
+      if (data.token) {
+        localStorage.setItem('authToken', data.token);
+        alert('Login Google berhasil! Token disimpan.');
+        // window.location.href = '/dashboard';
+      }
+    } catch (error) {
+      console.error('Error saat autentikasi Google:', error);
+      alert('Login Google gagal: ' + error.message);
+    } finally {
       setIsLoading(false);
-      alert('Login Google berhasil!');
+    }
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    console.log('Mencoba daftar dengan email:', { name, email, password });
+    
+    // const backendUrl = "http://localhost:8000/api/register";
+    // fetch(backendUrl, ...)
+    
+    // Simulasi selesai
+    setTimeout(() => {
+      setIsLoading(false);
+      alert('Pendaftaran berhasil! Silakan masuk.');
     }, 1500);
   };
-  
+
   useEffect(() => {
     if (window.google) {
       window.google.accounts.id.initialize({
@@ -71,12 +69,7 @@ export default function Login() {
 
       window.google.accounts.id.renderButton(
         document.getElementById("google-login-button"),
-        { 
-          theme: "outline", 
-          size: "large", 
-          text: "signin_with",
-          shape: "pill" 
-        }
+        { theme: "outline", size: "large", text: "signup_with", shape: "pill" }
       );
     }
   }, []);
@@ -84,31 +77,31 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#B3BEF6] to-[#B3BEF6] font-[Inter]">
       <div className="bg-white shadow-lg rounded-lg flex overflow-hidden max-w-4xl w-full mx-4 sm:mx-8 md:mx-auto">
-        {/* Kolom Kiri - Gambar */}
         <div className="hidden md:flex w-1/2 bg-[#3F51B5] items-center justify-center p-8">
-          <Link to="/" className="">
-            <img
-              src={educator}
-              alt="Educator"
-              className="w-full h-auto rounded-lg"
-            />
-          </Link>
+          <img
+            src="https://placehold.co/400x400/3F51B5/FFFFFF?text=Educator"
+            alt="Educator"
+            className="w-full h-auto rounded-lg"
+          />
         </div>
 
-        {/* Kolom Kanan - Formulir */}
         <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-            Masuk
+            Daftar
           </h2>
 
-          {/* Tampilkan pesan error jika ada */}
-          {error && (
-            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded relative mb-4" role="alert">
-              <span className="block sm:inline">{error}</span>
-            </div>
-          )}
-
           <form className="space-y-4" onSubmit={handleFormSubmit}>
+            <div className="max-w-[300px] mx-auto">
+              <label className="block text-gray-700 mb-1">Nama</label>
+              <input
+                type="text"
+                placeholder="Nama"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full h-[40px] px-3 border border-black rounded-lg text-black focus:outline-none focus:ring-1 focus:ring-[#3F51B5]"
+                required
+              />
+            </div>
             <div className="max-w-[300px] mx-auto">
               <label className="block text-gray-700 mb-1">Email</label>
               <input
@@ -137,7 +130,7 @@ export default function Login() {
                 className="w-full h-[40px] bg-[#3F51B5] text-white rounded-lg hover:bg-blue-700 transition"
                 disabled={isLoading}
               >
-                {isLoading ? 'Loading...' : 'Masuk'}
+                {isLoading ? 'Loading...' : 'Daftar'}
               </button>
             </div>
           </form>
@@ -148,18 +141,21 @@ export default function Login() {
             <hr className="flex-grow border-gray-300" />
           </div>
 
-          <div className="w-75 mx-auto h-[40px]">
-            <div id="google-login-button" className=''></div>
+          <div className="max-w-[300px] mx-auto">
+            <div id="google-login-button" className="flex justify-center"></div>
           </div>
-          
+
           <p className="mt-4 text-center text-gray-600">
-            Belum punya akun?{" "}
-            <Link to="/register" className="text-blue-500 hover:underline">
-              Daftar sekarang
+            Sudah punya akun?{" "}
+            <Link to="/login" className="text-blue-500 hover:underline">
+              Masuk sekarang
             </Link>
           </p>
         </div>
       </div>
     </div>
   );
-}
+};
+
+
+export default Register;
